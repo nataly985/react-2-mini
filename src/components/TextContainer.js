@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 export default class TextContainer extends Component {
   constructor() {
     super()
-    this.state = {
+
+    this.state={
       text: ''
     }
+    this.updateText = this.updateText.bind(this);
   }
 
   updateText(e) {
@@ -18,10 +20,10 @@ export default class TextContainer extends Component {
     return (
       <div className="textContainer">
         <textarea 
-          // style={  }
+          style={ {fontSize: this.props.fontSize, color: this.props.fontColor, fontFamily: this.props.fontFamily} }
           onChange={this.updateText}
           value={this.state.text} 
-          placeholder='Start typing your thoughts here!'
+          placeholder='My text!'
           cols="90"
           rows="30">
         </textarea>
